@@ -135,7 +135,7 @@ private fun SearchScreenContent(
     }
 
     val searchBarHeight by animateDpAsState(
-        targetValue = if (showSearchBar) 70.dp else 0.dp,
+        targetValue = if (showSearchBar) 80.dp else 0.dp,
         label = "searchBarHeight"
     )
 
@@ -150,8 +150,8 @@ private fun SearchScreenContent(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(searchBarHeight)
-                .background(Color.White)
-                .padding(horizontal = dimensionResource(id = R.dimen.padding_xsmall))
+                .background(MaterialTheme.colorScheme.background)
+                .padding(all = dimensionResource(id = R.dimen.padding_xsmall))
                 .clip(RoundedCornerShape(8.dp))
         ) {
             this@Column.AnimatedVisibility(
@@ -314,7 +314,7 @@ private fun SuccessState(images: List<String>, listState: LazyListState) {
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .height(dimensionResource(id = R.dimen.image_height))
-                                .background(MaterialTheme.colorScheme.tertiary)
+                                .background(MaterialTheme.colorScheme.surface)
                                 .shimmerEffect(),
                         )
                     },

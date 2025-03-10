@@ -12,10 +12,7 @@ val White40 = White.copy(alpha = 0.4f)
 
 
 val Black80 = Black.copy(alpha = 0.8f)
-
-val GreenMain80 = GreenMain.copy(alpha = 0.8f)
-val GreenMain40 = GreenMain.copy(alpha = 0.4f)
-
+val Black40 = Black.copy(alpha = 0.4f)
 
 val Gray = Color(0xFF5E5E5E)
 val LightGray = Color(0xFFF0F0F0)

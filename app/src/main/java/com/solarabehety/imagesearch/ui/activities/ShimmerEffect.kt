@@ -25,8 +25,8 @@ fun Modifier.shimmerEffect(): Modifier {
 
     val transition = rememberInfiniteTransition(label = "shimmerTransition")
     val translateX by transition.animateFloat(
-        initialValue = -300f, // Inicio fuera de pantalla
-        targetValue = 300f,   // Fin fuera de pantalla en el otro lado
+        initialValue = -300f,
+        targetValue = 300f,
         animationSpec = infiniteRepeatable(
             animation = tween(durationMillis = 1000, easing = LinearEasing),
             repeatMode = RepeatMode.Restart
@@ -38,11 +38,11 @@ fun Modifier.shimmerEffect(): Modifier {
         val gradient = Brush.linearGradient(
             colors = shimmerColors,
             start = Offset(translateX, 0f),
-            end = Offset(translateX + 300f, 0f) // Se mueve en el eje X
+            end = Offset(translateX + 300f, 0f)
         )
         onDrawWithContent {
-            drawContent() // Dibuja la imagen
-            drawRect(brush = gradient) // Aplica el shimmer encima
+            drawContent()
+            drawRect(brush = gradient)
         }
     }
 }
