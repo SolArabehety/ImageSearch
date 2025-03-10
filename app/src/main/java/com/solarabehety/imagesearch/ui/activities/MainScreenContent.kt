@@ -38,6 +38,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -161,6 +162,7 @@ private fun SearchScreenContent(
             ) {
                 SearchTextField(
                     inputState,
+                    listState,
                     onSearch
                 )
             }
@@ -179,13 +181,18 @@ private fun SearchScreenContent(
 @Composable
 private fun SearchTextField(
     searchState: FieldsState,
+    listState: LazyListState,
     onSearch: (String) -> Unit
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val searchFlow = remember { MutableStateFlow(searchState.searchValue) }
+    val coroutineScope = rememberCoroutineScope()
 
     fun search(query: String) {
         onSearch(query)
+        coroutineScope.launch {
+            listState.scrollToItem(0) 
+        }
         keyboardController?.hide()
     }
 
