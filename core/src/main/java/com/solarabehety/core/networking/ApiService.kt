@@ -19,6 +19,7 @@ interface ApiService {
     suspend fun getImages(
         @Query("query") query: String,
         @Query("orientation") orientation: String = "landscape",
+        @Query("size") size: String = "small",
     ): ImagesResponse
 
 }
