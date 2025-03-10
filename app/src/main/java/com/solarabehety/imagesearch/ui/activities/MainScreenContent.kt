@@ -65,6 +65,7 @@ import com.solarabehety.imagesearch.ui.theme.lobsterFamily
 import com.solarabehety.imagesearch.ui.viewmodel.MainViewModel
 import com.solarabehety.imagesearch.ui.viewmodel.SEARCH_MIN_QUERY_CHARS
 import com.solarabehety.imagesearch.ui.viewmodel.SearchActivityUiState
+import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.drop
@@ -178,6 +179,7 @@ private fun SearchScreenContent(
     }
 }
 
+@OptIn(FlowPreview::class)
 @Composable
 private fun SearchTextField(
     searchState: FieldsState,
@@ -191,7 +193,7 @@ private fun SearchTextField(
     fun search(query: String) {
         onSearch(query)
         coroutineScope.launch {
-            listState.scrollToItem(0) 
+            listState.scrollToItem(0)
         }
         keyboardController?.hide()
     }
