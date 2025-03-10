@@ -1,0 +1,63 @@
+[versions]
+agp = "8.3.1"
+kotlin = "1.9.0"
+coreKtx = "1.12.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+lifecycleRuntimeKtx = "2.7.0"
+activityCompose = "1.9.0"
+composeBom = "2023.08.00"
+hilt = "2.50"
+uiTooling = "1.7.8"
+hilt_navigation_compose = "1.2.0"
+retrofit = "2.9.0"
+jetbrainsKotlinJvm = "1.9.22"
+retrofitKotlinxSerializationJson = "1.0.0"
+kotlinxSerializationJson = "1.6.3"
+okhttp = "4.12.0"
+mockkVersion = "1.13.10"
+jetbrainsKotlinJvmVersion = "1.9.0"
+coil = "2.4.0"
+compose-google-fonts = "1.6.1"
+coroutinesTest = "1.7.3"
+turbine = "1.0.0"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockkVersion" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutinesTest" }
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
+
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+compose-ui-text-google-fonts = { module = "androidx.compose.ui:ui-text-google-fonts", version.ref = "compose-google-fonts" }
+
+di = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+diCompiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+diCompose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt_navigation_compose" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "uiTooling" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+retrofit-kotlin-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinxSerializationJson" }
+okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+diHilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvmVersion" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
